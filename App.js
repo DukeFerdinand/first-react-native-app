@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, TextInput } from 'react-native';
 import {StackNavigator} from 'react-navigation';
 
+import Welcome from './components/Welcome';
 import Signup from './components/Signup';
 import Profile from './components/Profile';
 
@@ -21,6 +22,7 @@ const styles = StyleSheet.create({
 });
 
 const AppLayout = StackNavigator({
+  Welcome: {screen: Welcome},
   Signup: {screen: Signup},
   Profile: {screen: Profile}
 })

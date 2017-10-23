@@ -17,7 +17,7 @@ export default class Signup extends Component {
         return (
             <View style={styles.container}>
                 <StatusBar hidden={true}/>
-                <Text style={{fontSize: 30}}>Create a Profile</Text>
+                <Text style={styles.title}>Create a Profile</Text>
                 <TextInput onChangeText={text => this.setState({username: text})} style={styles.textinput}/>
                 {this.state.username ? <Button onPress={() => navigate('Profile', {username: this.state.username}) }title='Click Me'/> : undefined}
             </View>
@@ -27,9 +27,13 @@ export default class Signup extends Component {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      // backgroundColor: '#222',
+      backgroundColor: '#222',
       alignItems: 'center',
       justifyContent: 'center',
+    },
+    title: {
+      fontSize: 40,
+      color: '#FEFEFE'
     },
     textinput: {
       width: 200,
