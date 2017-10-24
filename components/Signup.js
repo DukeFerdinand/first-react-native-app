@@ -18,8 +18,10 @@ export default class Signup extends Component {
             <View style={styles.container}>
                 <StatusBar hidden={true}/>
                 <Text style={styles.title}>Create a Profile</Text>
-                <TextInput onChangeText={text => this.setState({username: text})} style={styles.textinput}/>
-                {this.state.username ? <Button onPress={() => navigate('Profile', {username: this.state.username}) }title='Click Me'/> : undefined}
+                <View style={styles.inputGroup}>
+                  <TextInput onChangeText={text => this.setState({username: text})} style={styles.textinput}/>
+                  {this.state.username ? <Button onPress={() => navigate('Profile', {username: this.state.username}) }title='Go'/> : undefined}
+                </View>
             </View>
         )
     }
@@ -34,6 +36,9 @@ const styles = StyleSheet.create({
     title: {
       fontSize: 40,
       color: '#FEFEFE'
+    },
+    inputGroup: {
+      flexDirection: 'row',
     },
     textinput: {
       width: 200,

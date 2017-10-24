@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { StatusBar, View, Text } from 'react-native';
+import { StatusBar, View, Text, StyleSheet } from 'react-native';
 
 export default class Profile extends Component {
     static navigationOptions = ({navigation}) => ({
@@ -11,10 +11,28 @@ export default class Profile extends Component {
     render() {
       const {params} = this.props.navigation.state
         return (
-          <View>
+          <View style={styles.container}>
             <StatusBar hidden={true}/>
-            <Text style={{fontSize: 30}}>Hello {params.username}</Text>
+            <Text style={styles.title}>Hello {params.username}</Text>
+            <Text style={styles.subtitle}>Thanks for joining us</Text>
           </View>
         )
     }
 }
+
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: '#222',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    title: {
+      fontSize: 40,
+      color: '#FEFEFE'
+    },
+    subtitle: {
+        fontSize: 25,
+        color: '#FEFEFE'
+    }
+  })
